@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Nirvan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="brand">Nirvan</a>
+                <div class="navbar-toggle" onclick="toggleNavbar(this)">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="navbar-links">
+                    <a href="#home" onclick="closeNavbar()">Home</a>
+                    <a href="#about" onclick="closeNavbar()">About</a>
+                    <a href="#social-media" onclick="closeNavbar()">Social Media</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="section home-section">
+        <div class="container">
+            <h1>Welcome</h1>
+        </div>
+    </section>
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+        </div>
+    </section>
+    <section id="social-media" class="section">
+        <div class="container">
+            <h2>Social Media</h2>
+        </div>
+    </section>
+    <script>
+        function toggleNavbar(x) {
+            x.classList.toggle("active");
+            var navbarLinks = document.querySelector('.navbar-links');
+            navbarLinks.classList.toggle("active");
+            updateNavbarBackground();
+        }
+
+        function closeNavbar() {
+            var navbarToggle = document.querySelector('.navbar-toggle');
+            var navbarLinks = document.querySelector('.navbar-links');
+            if (navbarToggle.classList.contains('active')) {
+                navbarToggle.classList.remove('active');
+                navbarLinks.classList.remove('active');
+            }
+            updateNavbarBackground();
+        }
+
+        function updateNavbarBackground() {
+            var navbar = document.getElementById('navbar');
+            var homeSection = document.getElementById('home');
+            var homeRect = homeSection.getBoundingClientRect();
+
+            if (homeRect.bottom <= 0 || window.innerWidth <= 768) {
+                navbar.classList.add('blue');
+                navbar.classList.remove('transparent');
+            } else {
+                navbar.classList.add('transparent');
+                navbar.classList.remove('blue');
+            }
+        }
+
+        window.addEventListener('scroll', updateNavbarBackground);
+        window.addEventListener('resize', updateNavbarBackground);
+        window.addEventListener('load', updateNavbarBackground);
+    </script>
+</body>
+</html>
