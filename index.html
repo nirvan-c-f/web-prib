@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Nirvan</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-9T7a6UcJQyhdw+ejfd84YibBrPvbnH+Gn8YN7JUvkK2l7JHjTht90D6+nXQ1x7X7mmw0ODHfSmm5I8x0QSGtdw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <nav id="navbar">
@@ -19,6 +20,7 @@
                 <div class="navbar-links">
                     <a href="#home" onclick="closeNavbar()">Home</a>
                     <a href="#about" onclick="closeNavbar()">About</a>
+                    <a href="#sertifikat" onclick="closeNavbar()">Sertifikat</a>
                     <a href="#social-media" onclick="closeNavbar()">Social Media</a>
                 </div>
             </div>
@@ -27,6 +29,7 @@
     <section id="home" class="section home-section">
         <div class="container">
             <h1>Welcome</h1>
+            <a href="#about" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
     <section id="about" class="section">
@@ -34,11 +37,24 @@
             <h2>About Me</h2>
         </div>
     </section>
+    <section id="sertifikat" class="section">
+        <div class="container">
+            <h2>Sertifikat</h2>
+            <div class="certificate-container">
+                <a href="sertifikat_dicoding.pdf" target="_blank">
+                    <img src="sertifikat_dicoding_page-0001.jpg" alt="Sertifikat 1">
+                </a>
+            </div>
+        </div>
+    </section>
     <section id="social-media" class="section">
         <div class="container">
             <h2>Social Media</h2>
         </div>
     </section>
+    <footer>
+        <p>This Website created by Nirvan Calsyda Fitriansyah</p>
+    </footer>
     <script>
         function toggleNavbar(x) {
             x.classList.toggle("active");
