@@ -107,6 +107,58 @@ nav {
     color: white;
 }
 
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.scroll-down i {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.certificate-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certificate-container a {
+    display: block;
+    width: 500px;
+    transition: transform 0.3s ease;
+}
+
+.certificate-container a img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-container a:hover {
+    transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
     .navbar-links {
         display: none;
