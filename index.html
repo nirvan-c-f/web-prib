@@ -30,6 +30,7 @@
         <a href="#about" onclick="closeNavbar()">About</a>
         <a href="#social-media" onclick="closeNavbar()">Social Media</a>
     </div>
+    <div class="overlay" id="overlay"></div>
     <section id="home" class="section home-section">
         <div class="container">
             <h1>Welcome</h1>
@@ -55,16 +56,20 @@
         function toggleNavbar(x) {
             x.classList.toggle("active");
             var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('overlay');
             sidebar.classList.toggle("active");
+            overlay.classList.toggle("active");
             updateNavbarBackground();
         }
 
         function closeNavbar() {
             var navbarToggle = document.querySelector('.navbar-toggle');
             var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('overlay');
             if (navbarToggle.classList.contains('active')) {
                 navbarToggle.classList.remove('active');
                 sidebar.classList.remove('active');
+                overlay.classList.remove('active');
             }
             updateNavbarBackground();
         }
@@ -84,13 +89,13 @@
         }
 
         function startShaking() {
-        var button = document.querySelector('.cta-button');
-        setInterval(function() {
-            button.classList.add('shake');
-            setTimeout(function() {
-                button.classList.remove('shake');
-            }, 500);
-        }, 2000); 
+            var button = document.querySelector('.cta-button');
+            setInterval(function() {
+                button.classList.add('shake');
+                setTimeout(function() {
+                    button.classList.remove('shake');
+                }, 500);
+            }, 2000); 
         }
 
         window.addEventListener('load', startShaking);
