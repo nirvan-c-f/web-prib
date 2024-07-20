@@ -11,7 +11,7 @@
     <nav id="navbar">
         <div class="container">
             <div class="navbar-header">
-                <a href="#" class="brand">Nirvan</a>
+                <a href="#" class="brand">Nirvan C</a>
                 <div class="navbar-toggle" onclick="toggleNavbar(this)">
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -20,31 +20,25 @@
                 <div class="navbar-links">
                     <a href="#home" onclick="closeNavbar()">Home</a>
                     <a href="#about" onclick="closeNavbar()">About</a>
-                    <a href="#sertifikat" onclick="closeNavbar()">Sertifikat</a>
                     <a href="#social-media" onclick="closeNavbar()">Social Media</a>
                 </div>
             </div>
         </div>
     </nav>
+    <div class="sidebar" id="sidebar">
+        <a href="#home" onclick="closeNavbar()">Home</a>
+        <a href="#about" onclick="closeNavbar()">About</a>
+        <a href="#social-media" onclick="closeNavbar()">Social Media</a>
+    </div>
     <section id="home" class="section home-section">
         <div class="container">
             <h1>Welcome</h1>
-            <a href="#about" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
+            <a href="#" class="cta-button">Klik disini</a>
         </div>
-    </section>
+    </section>    
     <section id="about" class="section">
         <div class="container">
             <h2>About Me</h2>
-        </div>
-    </section>
-    <section id="sertifikat" class="section">
-        <div class="container">
-            <h2>Sertifikat</h2>
-            <div class="certificate-container">
-                <a href="sertifikat_dicoding.pdf" target="_blank">
-                    <img src="sertifikat_dicoding_page-0001.jpg" alt="Sertifikat 1">
-                </a>
-            </div>
         </div>
     </section>
     <section id="social-media" class="section">
@@ -53,22 +47,24 @@
         </div>
     </section>
     <footer>
-        <p>This Website created by Nirvan Calsyda Fitriansyah</p>
+        <div class="container">
+            <p>This Website created by <a href="#" class="ig">Nirvan C</a></p>
+        </div>
     </footer>
     <script>
         function toggleNavbar(x) {
             x.classList.toggle("active");
-            var navbarLinks = document.querySelector('.navbar-links');
-            navbarLinks.classList.toggle("active");
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle("active");
             updateNavbarBackground();
         }
 
         function closeNavbar() {
             var navbarToggle = document.querySelector('.navbar-toggle');
-            var navbarLinks = document.querySelector('.navbar-links');
+            var sidebar = document.getElementById('sidebar');
             if (navbarToggle.classList.contains('active')) {
                 navbarToggle.classList.remove('active');
-                navbarLinks.classList.remove('active');
+                sidebar.classList.remove('active');
             }
             updateNavbarBackground();
         }
@@ -87,6 +83,17 @@
             }
         }
 
+        function startShaking() {
+        var button = document.querySelector('.cta-button');
+        setInterval(function() {
+            button.classList.add('shake');
+            setTimeout(function() {
+                button.classList.remove('shake');
+            }, 500);
+        }, 2000); 
+        }
+
+        window.addEventListener('load', startShaking);
         window.addEventListener('scroll', updateNavbarBackground);
         window.addEventListener('resize', updateNavbarBackground);
         window.addEventListener('load', updateNavbarBackground);
